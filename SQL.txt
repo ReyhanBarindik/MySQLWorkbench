@@ -1,0 +1,101 @@
+create table Employee 
+(
+EmpId varchar (255),
+EmpName varchar (255),
+Age int ,
+PhoneNumber int,
+EmailID varchar (255)
+
+);
+insert into Employee values ("1", "Reyhan", 28, 98765432, "reyhan@gamil.com");
+insert into Employee values ("2", "Selma", 29, 987676543, "selma@gamil.com");
+insert into Employee values ("3", "Gulsum", 34, 12345678, "gulsum@gmail.com");
+insert into Employee values ("4", "Senel", 25, 123332211, "senel@gmail.com");
+insert into Employee values ("4", "Senel", 25, 123332211, "senel@gmail.com");
+insert into Employee values ("6", "Reyhan", 60, 123332221, "reyhan@gmail.com");
+
+-- select * from Employee;
+-- select count(*) from Employee;
+-- select count (distinct EmpId) from Employee;
+
+-- select * from Employee order by Age;
+-- select * from Employee order by Age DESC;
+-- select * from Employee order by EmpId DESC;
+-- select * from Employee order by EmpName, Age ; -- order by before first cond after than second cond if ypu have
+                                               -- two EmpName different age it orders with second cond 
+
+select * from Employee where age > 28 and EmpId > 2;  -- it checks both of them 
+
+
+
+
+create table Customer
+(
+ID int,
+Name varchar (255),
+PhoneNumber int ,
+EmailID varchar (255),
+Country varchar (255),
+City varchar (255)
+);
+insert into Customer values (10, "Yunus", 989898989, "yunus@gmail.com", "Turkey", "Izmir");
+insert into Customer values (20, "Turker", 978787889, "turker@gmail.com", "UK", "London");
+insert into Customer values (30, "Ahmet", 9898676767, "ahmet@gmail.com", "USA", "LA");
+insert into Customer values (40, "Sarmed", 9545458989, "sarmed@gmail.com", "Germany", "Berlin");
+insert into Customer values (50, "Ali", 95454222989, "ali@gmail.com", "Germany", "Munich");
+ 
+--select * from Customer where Country = "Germany" OR Country = "USA"; 
+
+select * from Customer where Country = "Germany" AND (City = "Berlin" OR City = "Munich"); -- //Sarmed & Ali
+
+
+
+create table Customer
+(
+ID int,
+Name varchar (255),
+PhoneNumber int ,
+EmailID varchar (255),
+Country varchar (255),
+City varchar (255)
+);
+insert into Customer values (10, "Yunus", 989898989, "yunus@gmail.com", "Turkey", "Izmir");
+insert into Customer values (20, "Turker", 978787889, "turker@gmail.com", "UK", "London");
+insert into Customer values (30, "Ahmet", 9898676767, "ahmet@gmail.com", "USA", "LA");
+insert into Customer values (40, "Sarmed", 9545458989, "sarmed@gmail.com", "Germany", "Berlin");
+insert into Customer values (50, "Ali", 95454222989, "ali@gmail.com", Null, "Munich");
+insert into Customer values (60, "Al", 95454112989, "al@gmail.com", Null, Null);
+
+--select * from Customer where Country = "Germany" OR Country = "USA"; 
+
+--select * from Customer where Country = "Germany" AND (City = "Berlin" OR City = "Munich"); -- //Sarmed & Ali
+
+--select * from Customer where Name like 'A%';
+
+--select * from Customer where Name like '%s';
+
+--select * from Customer where Name like '%m%';  --// Ahmet and Sarmed bc these names have 'm'
+
+--select * from Customer where Name like '_u%';   --// second char u --> Yunus and Turker 
+
+--select * from Customer where Name like 'A__%';   --> customer Al is Not included bc it has only 2 char but we need 
+                                                                                        -- at least A and 2 char 
+                                                                                        
+--select * from Customer where Country is Null;     
+
+select * from Customer where Country is Not Null;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
